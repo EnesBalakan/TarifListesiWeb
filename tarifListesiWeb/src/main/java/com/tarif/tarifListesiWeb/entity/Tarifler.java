@@ -15,15 +15,19 @@ public class Tarifler {
     private int id;
 
     @Column(name="tarif_adi")
-    private int tarif_adi;
+    private String tarif_adi;
 
     @Column(name="malzemeler")
-    private int malzemeler;
+    private String malzemeler;
 
     @Column(name="pisirme_suresi")
-    private int pisirme_suresi;
+    private String pisirme_suresi;
 
-    public Tarifler(int id, int malzemeler, int pisirme_suresi, int tarif_adi) {
+    public Tarifler() {
+    }
+
+
+    public Tarifler(int id, String malzemeler, String pisirme_suresi, String tarif_adi) {
         this.id = id;
         this.malzemeler = malzemeler;
         this.pisirme_suresi = pisirme_suresi;
@@ -38,27 +42,27 @@ public class Tarifler {
         this.id = id;
     }
 
-    public int getMalzemeler() {
+    public String getMalzemeler() {
         return malzemeler;
     }
 
-    public void setMalzemeler(int malzemeler) {
+    public void setMalzemeler(String malzemeler) {
         this.malzemeler = malzemeler;
     }
 
-    public int getPisirme_suresi() {
+    public String getPisirme_suresi() {
         return pisirme_suresi;
     }
 
-    public void setPisirme_suresi(int pisirme_suresi) {
+    public void setPisirme_suresi(String pisirme_suresi) {
         this.pisirme_suresi = pisirme_suresi;
     }
 
-    public int getTarif_adi() {
+    public String getTarif_adi() {
         return tarif_adi;
     }
 
-    public void setTarif_adi(int tarif_adi) {
+    public void setTarif_adi(String tarif_adi) {
         this.tarif_adi = tarif_adi;
     }
 
@@ -66,9 +70,9 @@ public class Tarifler {
     public String toString() {
         return "Tarifler{" +
                 "id=" + id +
-                ", tarif_adi=" + tarif_adi +
-                ", malzemeler=" + malzemeler +
-                ", pisirme_suresi=" + pisirme_suresi +
+                ", tarif_adi='" + tarif_adi + '\'' +
+                ", malzemeler='" + malzemeler + '\'' +
+                ", pisirme_suresi='" + pisirme_suresi + '\'' +
                 '}';
     }
 }
