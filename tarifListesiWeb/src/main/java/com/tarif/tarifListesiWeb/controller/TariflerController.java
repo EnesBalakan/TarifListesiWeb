@@ -4,10 +4,7 @@ import com.tarif.tarifListesiWeb.entity.Tarifler;
 import com.tarif.tarifListesiWeb.service.TariflerService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -52,6 +49,30 @@ public class TariflerController {
         tariflerService.save(theTarifler);
 
         // use a redirect to prevent duplicate submiss
+        return "redirect:/tarifler/list";
+    }
+
+    // Güncelleme Arayüzü
+    @GetMapping("/showFormForUpdate")
+    public String showFormForUpdate(@RequestParam("tariflerId")int theId, Model theModel){
+        // get the tarifler from the service
+        Tarifler theTarifler = tariflerService.findById(theId);
+
+        // set tarifler in the model to prepopulate the form
+        theModel.addAttribute("tarifler", theTarifler);
+
+        // send over to our form
+        return "tarifler/tarif-ekleme";
+    }
+
+    // Silme İşlemi
+    @GetMapping("/delete")
+    public String delete(@RequestParam("tariflerId")int theId){
+
+        // delete the tarif
+        tariflerService.deleteById(theId);
+
+        //redirect to the list
         return "redirect:/tarifler/list";
     }
 }

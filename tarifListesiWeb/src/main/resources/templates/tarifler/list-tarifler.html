@@ -4,68 +4,90 @@
     <meta charset="UTF-8">
     <title>Tarif Listem</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" th:href="@{/AnaSayfa.css}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+    <link th:href="@{/AnaSayfa.css}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #f9f9f9;
+            background-color: #fffaf5;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             padding: 40px;
         }
 
         h3 {
-            color: #ff6f61;
+            color: #e07a5f;
             font-size: 2.5rem;
             text-align: center;
             margin-bottom: 30px;
         }
 
         .btn-primary {
-            background-color: #ff9f80;
-            border-color: #ff9f80;
+            background-color: #f4a261;
+            border-color: #f4a261;
+            border-radius: 20px;
         }
 
         .btn-primary:hover {
-            background-color: #ff7d66;
-            border-color: #ff7d66;
+            background-color: #e76f51;
+            border-color: #e76f51;
+        }
+
+        .btn-info {
+            background-color: #81b29a;
+            border-color: #81b29a;
+            border-radius: 20px;
+        }
+
+        .btn-info:hover {
+            background-color: #6f9e8b;
+            border-color: #6f9e8b;
+        }
+
+        .btn-danger {
+            background-color: #f28482;
+            border-color: #f28482;
+            border-radius: 20px;
+        }
+
+        .btn-danger:hover {
+            background-color: #d76d6d;
+            border-color: #d76d6d;
         }
 
         .table {
             background-color: #ffffff;
             border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
             margin-top: 30px;
+            border: 2px solid black
         }
 
         .table th, .table td {
             vertical-align: middle;
             text-align: center;
-            padding: 12px;
+            padding: 14px;
         }
 
         .table th {
-            background-color: #ffedcc;
-            color: #333;
+            background-color: #ffe8d6;
+            color: #444;
+            font-size: 1rem;
         }
 
-        /* Tablo Satırları İçin Yeni Renkler */
         .table-striped tbody tr:nth-of-type(odd) {
-            background-color: #ffebcc;
+            background-color: #fef6e4;
         }
 
         .table-striped tbody tr:nth-of-type(even) {
-            background-color: #e1f7d5;
+            background-color: #e0fbfc;
         }
 
-        
         .table-hover tbody tr:hover {
-            background-color: #f7e4d4;
+            background-color: #fcd5ce;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
@@ -73,10 +95,13 @@
             margin-bottom: 20px;
         }
 
-
         .btn-sm {
             font-size: 14px;
             padding: 8px 16px;
+        }
+
+        hr {
+            border-top: 2px dashed #e9c46a;
         }
     </style>
 </head>
@@ -85,12 +110,12 @@
     <h3>Tarifler Listem</h3>
     <hr>
     <a th:href="@{/tarifler/showFormForAdd}" class="btn btn-primary btn-sm mb-3">
-        Tarif Ekle
+        + Yeni Tarif Ekle
     </a>
 
     <!-- Tablo -->
-    <table class="table table-bordered table-striped table-hover">
-        <thead class="table-dark">
+    <table class="table  table-hover">
+        <thead>
         <tr>
             <th>Yemek Adı</th>
             <th>Malzemeler</th>
@@ -104,8 +129,9 @@
             <td th:text="${tempTarifler.malzemeler}"></td>
             <td th:text="${tempTarifler.pisirme_suresi}"></td>
             <td>
-                <a th:href="@{/tarifler/showFormForUpdate/{id}(id=${tempTarifler.id})}" class="btn btn-sm btn-warning">Güncelle</a>
-                <a th:href="@{/tarifler/delete/{id}(id=${tempTarifler.id})}" class="btn btn-sm btn-danger">Sil</a>
+                <a th:href="@{/tarifler/showFormForUpdate(tariflerId=${tempTarifler.id})}" class="btn btn-info btn-sm">Güncelle</a>
+                <a th:href="@{/tarifler/delete(tariflerId=${tempTarifler.id})}" class="btn btn-danger btn-sm"
+                   onclick="return confirm('Bu tarifi silmek istediğinize emin misiniz?')">Sil</a>
             </td>
         </tr>
         </tbody>
@@ -113,3 +139,4 @@
 </div>
 </body>
 </html>
+
