@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+  <link th:href="@{/AnaSayfa.css}" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Ana Sayfa</title>
+  <style>
+    /* AnaSayfa.css */
+
+body {
+    background-color: #fff8f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+nav {
+    background-color: #ffe8cc;
+    border-bottom: 2px solid #ffb347;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav ul li a {
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #e67e22;
+}
+
+.container {
+    margin-top: 60px;
+}
+
+.box {
+    background-color: #fff;
+    border: 2px solid #ffcc80;
+    border-radius: 15px;
+    height: 160px;
+    margin-bottom: 20px;
+    padding: 20px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #6b4c3b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(255, 204, 128, 0.4);
+    transition: transform 0.2s ease-in-out;
+}
+
+.box:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.box img {
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+}
+        footer {
+    background-color: #ffcc99;
+    padding: 40px 0 20px 0;
+    color: #444;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-top: 2px dashed #e9c46a;
+    margin-top: 60px;
+}
+
+footer h5 {
+    color: #e07a5f;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+footer a {
+    color: #444;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #e76f51;
+}
+
+footer .text-center {
+    font-size: 14px;
+    background-color: #fef6e4;
+    color: #888;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    border-top: 1px solid #ddd;
+}
+  </style>
+</head>
+<body>
+
+<!-- navbar kısmımız -->
+<nav style="background-color: #f8f9fa; padding: 1rem;">
+  <ul style="list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0; justify-content: flex-start;">
+    <li><a th:href="@{/}" style="text-decoration: none; color: #333;">Ana sayfa</a></li>
+    <li><a th:href="@{/hakkimizda}" style="text-decoration: none; color: #333;">Hakkımızda</a></li>
+    <li><a th:href="@{/hizmetler}" style="text-decoration: none; color: #333;">Hizmetler</a></li>
+    <li><a th:href="@{/iletisim}" style="text-decoration: none; color: #333;">İletişim</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-4" >
+      <div class="box">yazı kısmı</div>
+    </div>
+
+    <div class="col">
+      <a th:href="@{/tarifler/list}" style="text-decoration: none;">
+        <div class="box"><img th:src="@{/images/list.png}" alt="list" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;">Tarif Listem</div>
+      </a>
+    </div>
+
+    <div class="col">
+      <a th:href="@{/tarifler/showFormForAdd}" style="text-decoration: none;">
+        <div class="box"><img th:src="@{/images/add.png}" alt="add" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;">Tarif Ekle</div>
+      </a>
+    </div>
+
+    <div class="col">
+      <div class="box"><img th:src="@{/images/kesfet.png}" alt="kesfet" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;">Keşfet</div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4 ">
+      <div class="box">yazı kısmı</div>
+    </div>
+    <div class="col">
+      <div class="box"><img th:src="@{/images/calendar.png}" alt="calendar" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;">Yemek Takvimim</div>
+    </div>
+
+    <div class="col">
+      <div class="box"><img th:src="@{/images/coming-soon.png}" alt="coming-soon" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;">Yakında!</div>
+    </div>
+
+    <div class="col">
+      <div class="box"><img th:src="@{/images/coming-soon.png}" alt="coming-soon" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;">Yakında!</div>
+    </div>
+  </div>
+
+
+</div>
+<footer class="text-center text-lg-start mt-5">
+  <div class="container p-4">
+    <div class="row">
+
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Hakkımızda</h5>
+        <p>
+          Tarif Listem, lezzetli yemekleri paylaşmak isteyen herkesin buluştuğu bir platformdur.
+        </p>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase">İletişim</h5>
+        <ul class="list-unstyled mb-0">
+          <li><a href="#!" class="text-dark"><img th:src="@{/images/mail.png}" alt="mail" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;">enesbalakan@gmail.com</a></li>
+          <li><a href="#!" class="text-dark"><img th:src="@{/images/phone.png}" alt="number" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;">+90 546 181 16 **</a></li>
+          <li><a href="https://www.instagram.com/kzt_enes65?igsh=M293YW96enZsMTlr&utm_source=qr" class="text-dark"><img th:src="@{/images/instagram.png}" alt="Instagram" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;">Instagram</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Hesap</h5>
+        <ul class="list-unstyled mb-0">
+          <li><a href="#!" class="text-dark"><img th:src="@{/images/user.png}" alt="user" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;">Profilim</a></li>
+          <li><a href="#!" class="text-dark"><img th:src="@{/images/cutlery.png}" alt="cutlery" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;">Tariflerim</a></li>
+          <li><a href="#!" class="text-dark"><img th:src="@{/images/exit.png}" alt="exit" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;">Çıkış Yap</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+</footer>
+</body>
+</html>

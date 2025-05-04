@@ -103,14 +103,55 @@
         hr {
             border-top: 2px dashed #e9c46a;
         }
+        footer {
+    background-color: #ffcc99;
+    padding: 40px 0 20px 0;
+    color: #444;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-top: 2px dashed #e9c46a;
+    margin-top: 60px;
+    border-radius:10px
+}
+
+footer h5 {
+    color: #e07a5f;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+footer a {
+    color: #444;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #e76f51;
+}
+
+footer .text-center {
+    font-size: 14px;
+    background-color: #fef6e4;
+    color: #888;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    border-top: 1px solid #ddd;
+}
+
     </style>
 </head>
 <body>
 <div class="container">
-    <h3>Tarifler Listem</h3>
+    <h3>
+        <img th:src="@{/images/hamburger.png}" alt="hamburger icon" style="width: 40px; height: 40px; vertical-align: middle; margin-right: 10px;">
+        Tarifler Listem
+    </h3>
     <hr>
+    <a th:href="@{/tarifler/anaSayfa}" class="btn btn-primary btn-sm mb-3">
+        <img th:src="@{/images/exit.png}" alt="exit" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;">Ana Sayfaya Dön
+    </a>
     <a th:href="@{/tarifler/showFormForAdd}" class="btn btn-primary btn-sm mb-3">
-        + Yeni Tarif Ekle
+        <img th:src="@{/images/add.png}" alt="add" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;">Yeni Tarif Ekle
     </a>
 
     <!-- Tablo -->
@@ -125,7 +166,11 @@
         </thead>
         <tbody>
         <tr th:each="tempTarifler : ${tarifler}">
-            <td th:text="${tempTarifler.tarif_adi}"></td>
+            <td>
+                <img th:src="@{/images/cutlery.png}" alt="cutlery icon"
+                     style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
+                <span th:text="${tempTarifler.tarif_adi}"></span>
+            </td>
             <td th:text="${tempTarifler.malzemeler}"></td>
             <td th:text="${tempTarifler.pisirme_suresi}"></td>
             <td>
@@ -137,6 +182,39 @@
         </tbody>
     </table>
 </div>
+<footer class="text-center text-lg-start mt-5">
+    <div class="container p-4">
+        <div class="row">
+
+            <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                <h5 class="text-uppercase">Hakkımızda</h5>
+                <p>
+                    Tarif Listem, lezzetli yemekleri paylaşmak isteyen herkesin buluştuğu bir platformdur.
+                </p>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase">İletişim</h5>
+                <ul class="list-unstyled mb-0">
+                    <li><a href="#!" class="text-dark"><img th:src="@{/images/mail.png}" alt="mail" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;">enesbalakan@gmail.com</a></li>
+                    <li><a href="#!" class="text-dark"><img th:src="@{/images/phone.png}" alt="number" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;">+90 546 181 16 **</a></li>
+                    <li><a href="https://www.instagram.com/kzt_enes65?igsh=M293YW96enZsMTlr&utm_source=qr" class="text-dark"><img th:src="@{/images/instagram.png}" alt="Instagram" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;">Instagram</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase">Hesap</h5>
+                <ul class="list-unstyled mb-0">
+                    <li><a href="#!" class="text-dark"><img th:src="@{/images/user.png}" alt="user" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;">Profilim</a></li>
+                    <li><a href="#!" class="text-dark"><img th:src="@{/images/cutlery.png}" alt="cutlery" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;">Tariflerim</a></li>
+                    <li><a href="#!" class="text-dark"><img th:src="@{/images/exit.png}" alt="exit" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;">Çıkış Yap</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+</footer>
 </body>
 </html>
 

@@ -14,52 +14,60 @@
 
   <style>
     body {
-        background-color: #f9f9f9;
+        background-color: #fff8f0;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        padding: 40px;
-    }
+     body {
+    background-color: #fff8f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 40px;
+}
 
-    h3 {
-        color: #ff6f61;
-        font-size: 2.5rem;
-        text-align: center;
-        margin-bottom: 30px;
-    }
+h3 {
+    color: #ff6f61;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
 
-    .form-control {
-        border-radius: 8px;
-        border: 1px solid #ddd;
-    }
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #ffb347;
+}
 
-    .form-container {
-        background-color: #ffffff;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        max-width: 600px;
-        margin: 0 auto;
-    }
+.form-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(255, 165, 77, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+}
 
-    .btn-info {
-        background-color: #ff9f80;
-        border-color: #ff9f80;
-        color: white;
-    }
+.btn-info {
+    background-color: #ff9f80;
+    border-color: #ff9f80;
+    color: white;
+}
 
-    .btn-info:hover {
-        background-color: #ff7d66;
-        border-color: #ff7d66;
-    }
+.btn-info:hover {
+    background-color: #ff7d66;
+    border-color: #ff7d66;
+}
 
-    a {
-        color: #ff6f61;
-        font-weight: bold;
-        text-decoration: none;
-    }
+a {
+    color: #ff6f61;
+    font-weight: bold;
+    text-decoration: none;
+}
 
-    a:hover {
-        text-decoration: underline;
-    }
+a:hover {
+    text-decoration: underline;
+}
+
+.liste{
+  margin-left:30px
+}
+
   </style>
 </head>
 <body>
@@ -91,7 +99,8 @@
 
     <hr>
     <div class="text-center">
-      <a th:href="@{/tarifler/list}">← Tarif Listesine Geri Dön</a>
+      <a th:href="@{/tarifler/anaSayfa}"><img th:src="@{/images/exit.png}" alt="exit" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;">Ana Sayfaya Geri Dön</a>
+      <a class="liste" th:href="@{/tarifler/list}"><img th:src="@{/images/list.png}" alt="list" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;">Tarif Listemi Gör</a>
     </div>
   </div>
 </div>

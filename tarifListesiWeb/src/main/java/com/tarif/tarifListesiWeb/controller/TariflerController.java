@@ -17,6 +17,15 @@ public class TariflerController {
         tariflerService = theTariflerService;
     }
 
+    // Ana sayfa
+    @GetMapping("/anaSayfa")
+    public String anaSayfa(Model theModel){
+
+
+        return "tarifler/ana-sayfa";
+
+    }
+
     // tüm tarifleri ekrana yazdıran api
     @GetMapping("/list")
     public String list(Model theModel){
