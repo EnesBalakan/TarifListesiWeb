@@ -39,6 +39,12 @@ public class TariflerController {
         return "tarifler/list-tarifler";
     }
 
+    // keşfet sayfası
+    @GetMapping("/discover")
+    public String discover(Model theModel){
+        return "tarifler/discover";
+    }
+
     // Ekleme Arayüzü
     @GetMapping("/showFormForAdd")
     public String showFormAdd(Model theModel){

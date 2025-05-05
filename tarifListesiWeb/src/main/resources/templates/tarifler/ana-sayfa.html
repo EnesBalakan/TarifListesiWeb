@@ -18,6 +18,9 @@ nav {
     background-color: #ffe8cc;
     border-bottom: 2px solid #ffb347;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 nav ul li a {
@@ -101,10 +104,10 @@ footer .text-center {
 <!-- navbar kısmımız -->
 <nav style="background-color: #f8f9fa; padding: 1rem;">
   <ul style="list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0; justify-content: flex-start;">
-    <li><a th:href="@{/}" style="text-decoration: none; color: #333;">Ana sayfa</a></li>
-    <li><a th:href="@{/hakkimizda}" style="text-decoration: none; color: #333;">Hakkımızda</a></li>
-    <li><a th:href="@{/hizmetler}" style="text-decoration: none; color: #333;">Hizmetler</a></li>
-    <li><a th:href="@{/iletisim}" style="text-decoration: none; color: #333;">İletişim</a></li>
+    <li><a th:href="@{/tarifler/anaSayfa}" style="text-decoration: none; color: #333;"><img th:src="@{/images/home.png}" alt="home" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;">Ana sayfa </a></li>
+    <li><a th:href="@{/hakkimizda}" style="text-decoration: none; color: #333;"><img th:src="@{/images/vertical-bar.png}" alt="vertical-bar" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;"><img th:src="@{/images/info.png}" alt="info" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;">Hakkımızda</a></li>
+    <li><a th:href="@{/hizmetler}" style="text-decoration: none; color: #333;"><img th:src="@{/images/vertical-bar.png}" alt="vertical-bar" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;"><img th:src="@{/images/technical-support.png}" alt="technical-support" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;">Hizmetler</a></li>
+    <li><a th:href="@{/iletisim}" style="text-decoration: none; color: #333;"><img th:src="@{/images/vertical-bar.png}" alt="vertical-bar" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;"><img th:src="@{/images/bubble-chat.png}" alt="bubble-chat" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;">İletişim</a></li>
   </ul>
 </nav>
 
@@ -128,7 +131,9 @@ footer .text-center {
     </div>
 
     <div class="col">
+      <a th:href="@{/tarifler/discover}" style="text-decoration: none;">
       <div class="box"><img th:src="@{/images/kesfet.png}" alt="kesfet" style="width: 18px; height: 18px; margin-right: 6px; vertical-align: middle;">Keşfet</div>
+      </a>
     </div>
   </div>
 
