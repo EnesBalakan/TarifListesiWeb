@@ -17,6 +17,11 @@ public class TariflerController {
         tariflerService = theTariflerService;
     }
 
+    @GetMapping("/showMyLoginPage")
+    public String showMyLoginPage() {
+        return "tarifler/giris";
+    }
+
     // Ana sayfa
     @GetMapping("/anaSayfa")
     public String anaSayfa(Model theModel){
