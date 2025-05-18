@@ -17,6 +17,16 @@ public class TariflerController {
         tariflerService = theTariflerService;
     }
 
+    @GetMapping("/yakinda")
+    public String yakinda(){
+        return "tarifler/yakinda";
+    }
+
+    @GetMapping("/profilim")
+    public String profilim(){
+        return "tarifler/profil-bilgilerim";
+    }
+
     @GetMapping("/showMyLoginPage")
     public String showMyLoginPage() {
         return "tarifler/giris";
@@ -42,6 +52,13 @@ public class TariflerController {
         theModel.addAttribute("tarifler", theTarifler);
 
         return "tarifler/list-tarifler";
+    }
+
+    //Yemek takvimim sayfası
+    @GetMapping("/yemekTakvimim")
+    public String yemekTakvimim(){
+
+        return "yemek-takvimim";
     }
 
     // keşfet sayfası

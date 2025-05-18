@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+                xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Profil Bilgilerim</title>
+</head>
+<body>
+
+<!-- Dsiplay user name and role-->
+<p>
+    User: <span sec:authentication="principal.username"/>
+    Roles: <span sec:authentication="principal.authorities"/>
+</p>
+</body>
+</html>

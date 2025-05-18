@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Yakında</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #dc3545;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        a.btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.95em;
+            transition: background-color 0.3s ease;
+        }
+
+        a.btn:hover {
+            background-color: #0056b3;
+        }
+
+        a.btn img {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+<h1>404 Not Found</h1>
+<p> Yakın Zamanda Burası Gelecektir, Beklemede Kalınız!</p>
+
+<a th:href="@{/tarifler/anaSayfa}" class="btn">
+    <img th:src="@{/images/home.png}" alt="home" style="width: 18px; height: 18px; vertical-align: middle;">
+    Ana Sayfaya Dön
+</a>
+</body>
+</html>
